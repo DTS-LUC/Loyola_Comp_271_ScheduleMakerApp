@@ -1,6 +1,9 @@
 # ScheduleMakerApp
 Schedule maker application for Comp 271 final project
 
+Github Tutorial: 
+https://try.github.io/
+
 
 Github Guides
 
