@@ -1,15 +1,18 @@
 # ScheduleMakerApp
 Schedule maker application for Comp 271 final project
 
-Github Tutorial: 
-https://try.github.io/
+I started post some basic structure and notes in the different files as comments
 
-Simple Guide:
-http://rogerdudler.github.io/git-guide/
+Gitting Started
+	Github Tutorial: 
+	https://try.github.io/
 
-Github's Guides
+	Simple Guide:
+	http://rogerdudler.github.io/git-guide/
 
-https://guides.github.com/introduction/flow/
+	Github's Guides:
 
-https://guides.github.com/activities/hello-world/
+	https://guides.github.com/introduction/flow/
+
+	https://guides.github.com/activities/hello-world/
 
