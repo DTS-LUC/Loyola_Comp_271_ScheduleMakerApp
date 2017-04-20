@@ -4,8 +4,7 @@
 	BASIC_STRUCTURE
 		-JButton AddClass
 		-JButton RemoveClass
-		-JButton Print
-		-Jbutton NewSchedule
+		-JMenu {"New", "Print"}
 		-JLabel[42] TimeSlots (Will just read, then write, data recieved from 'LoyolaEvent'
 		-Keylistener for buttons
 		
@@ -13,7 +12,10 @@
 		- Create constructor
 		- Create event listeners for jButtons
 		- Create methods for calling other classes
-		- Method for removing events (Will simply clear JLabels
+		- Method for removing events (Will simply clear JLabels)
+		- Figure out menu bar
+			- Also how to print schedule
+		
 */
 package loyolaScheduleBuilder;
 
