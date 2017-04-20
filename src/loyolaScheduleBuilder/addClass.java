@@ -18,6 +18,8 @@
 		create JTextFields, OptionPanes, or other form to collect data in proper format
 		- JColorChooser to select background
 		
+		- Check boxes to select days
+		
 		create a new 'ScheduleEvent' with variables
 		return new 'ScheduleEvent' to main class
  */
