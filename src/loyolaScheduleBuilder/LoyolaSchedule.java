@@ -6,13 +6,14 @@
 		-JButton RemoveClass
 		-JButton Print
 		-Jbutton NewSchedule
-		-JLabel[42] TimeSlots
+		-JLabel[42] TimeSlots (Will just read, then write, data recieved from 'LoyolaEvent'
 		-Keylistener for buttons
 		
 	TO_DO
 		- Create constructor
 		- Create event listeners for jButtons
 		- Create methods for calling other classes
+		- Method for removing events (Will simply clear JLabels
 */
 package loyolaScheduleBuilder;
 
