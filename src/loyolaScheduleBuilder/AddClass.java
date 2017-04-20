@@ -1,3 +1,5 @@
+//Nora's Class... 
+
 /*
 	Pop up window for creating new events
 		-Called from main class 'Schedule'
@@ -10,7 +12,7 @@
 	Notes:
 		Will need to extend class JFrame JFrame
 		
-		Time variable should be selected from JComboBox. This will make it easier to assign the proper jlabel for time slots
+		Time variable should be selected from JComboBox (like a drop down menu). This will make it easier to assign the proper jlabel for time slots
 			-Will also limit to classes that don't align perfectly - Difficult for lab times
 	TO_DO
 		Declare variables (courseName, day(s), time, location, bgColor, anything else? ) to collect
