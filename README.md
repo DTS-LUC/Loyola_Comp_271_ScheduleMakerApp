@@ -1,7 +1,9 @@
 # ScheduleMakerApp
 Schedule maker application for Comp 271 final project
 
-I started to post some basic structure and notes in the different files as comments
+I started to post some basic structure and notes in the different files as comments. Let's figure out who is going to be responsible for which sections. 
+
+We will have to focus a lot on using Swing and EventListener
 
 # Gitting Started
 
