@@ -23,7 +23,7 @@ public class ScheduleEvent
 
 
 		// Add course name
-
+		
 
 		// Add professor
 
