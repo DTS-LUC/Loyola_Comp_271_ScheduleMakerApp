@@ -19,12 +19,16 @@
 */
 package loyolaScheduleBuilder;
 
+import java.awt.Dimensions;
+import java.awt.Toolkit;
 import java.util.*;
+import javax.swing.*;
 
-public class LoyolaSchedule
+public class LoyolaSchedule extends JFrame
 {
+
 	public static void main(String[] args)
 	{
-		
+		new LoyolaSchedule();
 	}
 }
