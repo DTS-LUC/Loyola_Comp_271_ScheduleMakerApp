@@ -58,9 +58,4 @@ public class ScheduleEvent
 	private void editTime(int tSlot)
 
 	private void editBackground(Color bGround)
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 95aeb4905401fb1eacf59ccff27f8a5adf0b4f43
