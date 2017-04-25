@@ -18,6 +18,10 @@ https://guides.github.com/introduction/flow/
 
 https://guides.github.com/activities/hello-world/
 
+# MVC Paradigm
+
+https://www.youtube.com/watch?v=dTVVa2gfht8
+
 # Swing Resources
 
 	YouTube Tutorials:
@@ -39,7 +43,3 @@ https://www.youtube.com/watch?v=Db3cC5iPrOM
 
 	Other Guides:
 https://www.tutorialspoint.com/swing/swing_event_listeners.htm
-
-# MVC Paradigm
-
-https://www.youtube.com/watch?v=dTVVa2gfht8
