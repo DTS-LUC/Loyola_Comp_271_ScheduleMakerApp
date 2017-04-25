@@ -19,16 +19,19 @@
 */
 package loyolaScheduleBuilder;
 
-import java.awt.Dimensions;
+import java.awt.event.ActionListener;
 import java.awt.Toolkit;
 import java.util.*;
 import javax.swing.*;
 
 public class LoyolaSchedule extends JFrame
 {
-
-	public static void main(String[] args)
+	private JButton addButton = new JButton("Add Class");
+	private JButoon removeButton = new JButton("Remove Class");
+	//private JLabel scheduleSlot = new JLabel
+	
+	LoyolaSchedule()
 	{
-		new LoyolaSchedule();
+		
 	}
 }
