@@ -35,27 +35,45 @@ public class ScheduleEvent
 
 
 		// Add background color
-	}
+	} 
 
-	private 
-
-	private void editDepartmentNumber(String dept)
+	private void setDepartmentNumber(String dept)
 	{
 		this.department = new String(dept);
 	}
 
-	private void editCourseNumber(int cNum)
+	private void setCourseNumber(int cNum)
 	{
 		this.courseNumber = cNum;
 	}
 
-	private void editCourseName(String cName)
+	public void setCourseName(String cName)
+	{
 
-	private void editProfessor(String prof)
+	}
 
-	private void editDay(int dSlot)
+	public void setProfessor(String prof)
+	{
+		
+	}
 
-	private void editTime(int tSlot)
+	public void setDay(int dSlot)
+	{
+		
+	}
 
-	private void editBackground(Color bGround)
+	public void setTime(int tSlot)
+	{
+		
+	}
+
+	public void setBackground(Color bGround)
+	{
+		
+	}
+		
+	public String getDeptartment()
+	{
+		return department;
+	}
 }
