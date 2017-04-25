@@ -20,18 +20,18 @@ https://guides.github.com/activities/hello-world/
 
 # MVC Paradigm
 
-https://www.youtube.com/watch?v=dTVVa2gfht8
+https://www.youtube.com/watch?v=dTVVa2gfht8 - Derek Banas
 
 # Swing Resources
 
 	YouTube Tutorials:
-https://www.youtube.com/watch?v=3XB3in9Xqy8
+https://www.youtube.com/watch?v=3XB3in9Xqy8 - Derek Banas (General)
 
-https://www.youtube.com/watch?v=ZDw18yUwz6I
+https://www.youtube.com/watch?v=ZDw18yUwz6I - Arend Peter (General)
 
-https://www.youtube.com/watch?v=g2vDARb7gx8
+https://www.youtube.com/watch?v=g2vDARb7gx8 - John Gizdich (GridBagLayout)
 
-https://www.youtube.com/watch?v=FB_wJpIdA8k
+https://www.youtube.com/watch?v=FB_wJpIdA8k - Mr. Java Help (GridBagLayout)
 
 	Other Guides:
 http://www.tutorialspoint.com/swing/
@@ -39,11 +39,11 @@ http://www.tutorialspoint.com/swing/
 # EventListener Resources
 
 	YouTube Tutorials:
-https://www.youtube.com/watch?v=3ifwR5feRQI
+https://www.youtube.com/watch?v=3ifwR5feRQI - Derek Banas (ActionListener)
 
-https://www.youtube.com/watch?v=wApG8SHBJ24
+https://www.youtube.com/watch?v=wApG8SHBJ24 - Derek Banas (NumberFromat & EventListeners)
 
-https://www.youtube.com/watch?v=Db3cC5iPrOM
+https://www.youtube.com/watch?v=Db3cC5iPrOM - Arend Peter (GridLayout & ActionListener)
 
 	Other Guides:
 https://www.tutorialspoint.com/swing/swing_event_listeners.htm
