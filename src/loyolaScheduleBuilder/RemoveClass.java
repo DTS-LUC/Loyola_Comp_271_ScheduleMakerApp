@@ -7,15 +7,23 @@
 			- The main class will then clear the time slot label
 			
 */
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.*;
 import java.awt.event.*;
+import java.text.NumberFormat;
+
+
 public class removeClass extends JFrame{
 
 	JButton button1;
 	JTextField textField1;
 	JTextArea textArea1;
+	JComboBox Classes;
+	String CurrentClass="";
+	
+	
 	
 	public static void main(String[] args){
 		
@@ -24,7 +32,7 @@ public class removeClass extends JFrame{
 	
 	public removeClass(){
 		
-		this.setSize(500,500);
+		this.setSize(400,400);
 		
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		
@@ -46,6 +54,12 @@ public class removeClass extends JFrame{
 		
 		JPanel thePanel = new JPanel();
 		
+		String[] classes = {"Comp 271","Comp 264","Math 263"};
+		
+		Classes = new JComboBox(classes);
+		
+		Classes.addItem("Comp 163");
+		
 		JLabel label1 = new JLabel("Remove Class"); //Labels
 		
 		thePanel.add(label1);
@@ -53,10 +67,8 @@ public class removeClass extends JFrame{
 		button1 = new JButton("Remove"); //Buttons
 		
 		thePanel.add(button1);
-		
-		textField1 = new JTextField("Type Here", 15);
-		
-		thePanel.add(textField1);
+
+		thePanel.add(Classes);
 		
 		textArea1 = new JTextArea(15,20);
 		
@@ -64,7 +76,6 @@ public class removeClass extends JFrame{
 		
 		thePanel.add(textArea1);
 		
-		ListenForKeys lisForK = new ListenForKeys(); 
 		
 		ListenForButton lisForB = new ListenForButton(); 
 		
@@ -74,37 +85,23 @@ public class removeClass extends JFrame{
 
 		this.setVisible(true);
 		
+		
 
 	}
 	private class ListenForButton implements ActionListener{
 
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			if (e.getSource() == button1){
 				
-				textArea1.append("Classes Removed");
+				int removedClass = Classes.getSelectedIndex();
+				Classes.removeItemAt(removedClass);
+				textArea1.append("Class Removed" + "\n");				
 			}
 				
 				
 		}
 		
-	}
-	  private class ListenForKeys implements KeyListener{
-
-		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public void keyReleased(KeyEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public void keyTyped(KeyEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
 		  
 	  }
 	
+}
