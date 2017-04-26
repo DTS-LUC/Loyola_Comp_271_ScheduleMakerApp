@@ -33,8 +33,6 @@ public class ScheduleController
 	
 	public ScheduleController(LoyolaSchedule theSchedule, RemoveClass viewRemove, AddClass viewAdd, ) {
 		this.theSchedule = theSchedule;
-		this.viewRemove = viewRemove;
-		this.viewAdd = viewAdd;
 		
 		this.theView.addCalculateListener(new CalculateListener());
 	}
@@ -46,7 +44,8 @@ public class ScheduleController
 
 		public void actionPerformed(ActionEvent e)
 		{
-			// Needs to call viewAdd	
+			// Needs to call viewAdd
+			viewAdd = new AddClass();
 			
 		}
 		
@@ -71,8 +70,8 @@ public class ScheduleController
 		public void actionPerformed(ActionEvent e)
 		{
 			// Needs to pass course list to removeView
-
-			
+			viewRemove = new RoveClass(courseList);
+			viewRemove.toFront();
 		}
 		
 	}
@@ -83,7 +82,14 @@ public class ScheduleController
 
 		public void actionPerformed(ActionEvent e)
 		{
-			// Needs to collect course from removeView and pass it to remove method on theSchedule
+			// Need to build removeCourse method in RemoveClass to retrieve selected course
+			String removedClass = new String(viewRemove.removeCourse());
+			viewRemove.setVisible(false);
+			viewRemove.dispose();
+
+			//
+			theSchedule.removePanel(removedClass); //need to build in theSchedule
+			//
 
 		}
 		
