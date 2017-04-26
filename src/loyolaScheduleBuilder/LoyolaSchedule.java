@@ -39,14 +39,6 @@ public class LoyolaSchedule extends JFrame implements ActionListener
 	
 
 	// Schedule Components
-<<<<<<< HEAD
-	private Jpanel schedulePane;
-	private JLabel[] monday = new JLabel[9];
-	private JLabel[] tuesday = new JLabel[8]; // Contains a blank label for alignment
-	private JLabel[] wednesday = new JLabel[9];
-	private JLabel[] thursday = new JLabel[8]; // Matches Tuesday
-	private JLabel[] friday = new JLabel[9];
-=======
 	private JPanel schedulePane;
 	private JPanel monPane;
 	private JPanel tuePane;
@@ -58,7 +50,7 @@ public class LoyolaSchedule extends JFrame implements ActionListener
 	private EventPanel[] wednesday = new EventPanel[9];
 	private EventPanel[] thursday = new EventPanel[8];
 	private EventPanel[] friday = new EventPanel[9];
->>>>>>> 40b9aa5a1c980bafc1a16e4f520ed5392cb8e860
+
 	
 	public LoyolaSchedule()
 	{
@@ -94,16 +86,12 @@ public class LoyolaSchedule extends JFrame implements ActionListener
 
 		// TO_DO: Set grid constraints
 
-<<<<<<< HEAD
-		resetLabels();
-=======
-		// sizePanels();
+		sizePanels();
 
 		// schedulePane = new JPanel();
 		// schedulePane.setLayout(new GridBagLayout());
 
 
->>>>>>> 40b9aa5a1c980bafc1a16e4f520ed5392cb8e860
 		/* TO_DO:
 			Set Layout
 				-GridBagLayout
@@ -162,53 +150,53 @@ public class LoyolaSchedule extends JFrame implements ActionListener
 		friday[8].setPreferredSize(new Dimension(100, 160));
 	}
 
-	// public void setPanel(ScheduleEvent e)
-	// {
-	// 	courseList.add(e.getDepartment() + " " + String.valueOf(e.getCourseNumber()));
+	public void setPanel(ScheduleEvent e)
+	{
+		courseList.add(e.getDepartment() + " " + String.valueOf(e.getCourseNumber()));
 
-	// 	int time = e.getTime;
+		int time = e.getTime;
 
-	// 	switch (e.getDay()){
-	// 		case 0:	//Monday
-	// 			monday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-	// 			monday[time].setCourseName(e.getCourseName());
-	// 			monday[time].setProfessor(e.getProfessor());
-	// 			monday[time].setBackground(e.getBackground());
-	// 			return;
+		switch (e.getDay()){
+			case 0:	//Monday
+				monday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+				monday[time].setCourseName(e.getCourseName());
+				monday[time].setProfessor(e.getProfessor());
+				monday[time].setBackground(e.getBackground());
+				return;
 
-	// 		// Possible issues with location of Tuesday and Thursday slots
-	// 		case 1: // Tuesday
-	// 			tuesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-	// 			tuesday[time].setCourseName(e.getCourseName());
-	// 			tuesday[time].setProfessor(e.getProfessor());
-	// 			tuesday[time].setBackground(e.getBackground());
-	// 			return;
+			// Possible issues with location of Tuesday and Thursday slots
+			case 1: // Tuesday
+				tuesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+				tuesday[time].setCourseName(e.getCourseName());
+				tuesday[time].setProfessor(e.getProfessor());
+				tuesday[time].setBackground(e.getBackground());
+				return;
 
-	// 		case 2: // Wednesday
-	// 			wednesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-	// 			wednesday[time].setCourseName(e.getCourseName());
-	// 			wednesday[time].setProfessor(e.getProfessor());
-	// 			wednesday[time].setBackground(e.getBackground());
-	// 			return;
+			case 2: // Wednesday
+				wednesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+				wednesday[time].setCourseName(e.getCourseName());
+				wednesday[time].setProfessor(e.getProfessor());
+				wednesday[time].setBackground(e.getBackground());
+				return;
 
-	// 		case 3: // Thursday
-	// 			thursday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-	// 			thursday[time].setCourseName(e.getCourseName());
-	// 			thursday[time].setProfessor(e.getProfessor());
-	// 			thursday[time].setBackground(e.getBackground());
-	// 			return;
+			case 3: // Thursday
+				thursday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+				thursday[time].setCourseName(e.getCourseName());
+				thursday[time].setProfessor(e.getProfessor());
+				thursday[time].setBackground(e.getBackground());
+				return;
 
-	// 		case 4: // Friday
-	// 			friday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-	// 			friday[time].setCourseName(e.getCourseName());
-	// 			friday[time].setProfessor(e.getProfessor());
-	// 			friday[time].setBackground(e.getBackground());
-	// 			return;
+			case 4: // Friday
+				friday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+				friday[time].setCourseName(e.getCourseName());
+				friday[time].setProfessor(e.getProfessor());
+				friday[time].setBackground(e.getBackground());
+				return;
 
-	// 		default:
-	// 			return; // Set an error message
-	// 		}
-	// }
+			default:
+				return; // Set an error message
+			}
+	}
 
 	public void actionPerformed(ActionEvent e)
 	{
