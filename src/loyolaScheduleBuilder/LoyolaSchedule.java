@@ -54,6 +54,7 @@ public class LoyolaSchedule extends JFrame
 
 		/* TO_DO:
 			Set Layout
+				-GridBagLayout
 			Create Add Button
 				- Create ActionListener
 			Create Remove Button
