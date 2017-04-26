@@ -28,7 +28,6 @@ import java.awt.BorderLayout;
 public class LoyolaSchedule extends JFrame implements ActionListener
 {
 	// Components needed for schedule GUI
-	private List<String> courseList;
 
 	// Button Components
 	private JPanel buttonPane;

@@ -26,30 +26,68 @@ public class ScheduleController
 {
 	
 	private LoyolaSchedule theSchedule;
-	private RemoveClass removeView;
-	private AddClass addView;
+	private RemoveClass viewRemove;
+	private AddClass viewAdd;
+
+	private List<String> courseList;
 	
-	public CalculatorController(CalculatorView theView, CalculatorModel theModel) {
-		this.theView = theView;
-		this.theModel = theModel;
-		
-		// Tell the View that when ever the calculate button
-		// is clicked to execute the actionPerformed method
-		// in the CalculateListener inner class
+	public ScheduleController(LoyolaSchedule theSchedule, RemoveClass viewRemove, AddClass viewAdd, ) {
+		this.theSchedule = theSchedule;
+		this.viewRemove = viewRemove;
+		this.viewAdd = viewAdd;
 		
 		this.theView.addCalculateListener(new CalculateListener());
 	}
-	
-	class removeListener implements ActionListener{
 
-		public void actionPerformed(ActionEvent e) {
-			
 
-				
-			}
+	// Action listener for add button on theSchedule
+	class addClassListener implements ActionListener
+	{
+
+		public void actionPerformed(ActionEvent e)
+		{
+			// Needs to call viewAdd	
 			
 		}
 		
 	}
+
+	// Action listener for viewAdd submit button
+	class addListener implements ActionListener
+	{
+
+		public void actionPerformed(ActionEvent e)
+		{
+			// Needs to collect ScheduleEvent and pass it to the setEventPanel in theSchedule
+			
+		}
+		
+	}
+	
+	// Action listener for remove button on theSchedule
+	class removeClassListener implements ActionListener
+	{
+
+		public void actionPerformed(ActionEvent e)
+		{
+			// Needs to pass course list to removeView
+
+			
+		}
+		
+	}
+
+	// Action listener for viewRemove submit button
+	class removeListener implements ActionListener
+	{
+
+		public void actionPerformed(ActionEvent e)
+		{
+			// Needs to collect course from removeView and pass it to remove method on theSchedule
+
+		}
+		
+	}
+
 	
 }
