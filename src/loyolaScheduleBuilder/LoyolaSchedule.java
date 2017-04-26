@@ -16,19 +16,22 @@
 			- Also how to print schedule
 		
 */
-package loyolaScheduleBuilder;
+// package loyolaScheduleBuilder;
 
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.awt.Toolkit;
+import java.awt.Dimension;
 import java.util.*;
 import javax.swing.*;
+import java.awt.BorderLayout;
 
-public class LoyolaSchedule extends JFrame
+public class LoyolaSchedule extends JFrame implements ActionListener
 {
-	// Components need for schedule GUI
+	// Components needed for schedule GUI
+	private List<String> courseList;
 
 	// Button Components
-	private Jpanel buttonPane;
+	private JPanel buttonPane;
 	private JButton addButton;
 	private JButton removeButton;
 	// printButton
@@ -36,17 +39,33 @@ public class LoyolaSchedule extends JFrame
 	
 
 	// Schedule Components
+<<<<<<< HEAD
 	private Jpanel schedulePane;
 	private JLabel[] monday = new JLabel[9];
 	private JLabel[] tuesday = new JLabel[8]; // Contains a blank label for alignment
 	private JLabel[] wednesday = new JLabel[9];
 	private JLabel[] thursday = new JLabel[8]; // Matches Tuesday
 	private JLabel[] friday = new JLabel[9];
+=======
+	private JPanel schedulePane;
+	private JPanel monPane;
+	private JPanel tuePane;
+	private JPanel wedPane;
+	private JPanel thrPane;
+	private JPanel friPane;
+	private EventPanel[] monday = new EventPanel[9];
+	private EventPanel[] tuesday = new EventPanel[8]; // Contains a blank label for alignment
+	private EventPanel[] wednesday = new EventPanel[9];
+	private EventPanel[] thursday = new EventPanel[8];
+	private EventPanel[] friday = new EventPanel[9];
+>>>>>>> 40b9aa5a1c980bafc1a16e4f520ed5392cb8e860
 	
 	public LoyolaSchedule()
 	{
+		courseList = new LinkedList<String>();
+
 		this.setSize(800, 800);
-		Toolkit tk = Toolkit
+		Toolkit tk = Toolkit.getDefaultToolkit();
 		this.setVisible(true);
 		Dimension dim = tk.getScreenSize();
 		// Find the center of the screen
@@ -59,12 +78,13 @@ public class LoyolaSchedule extends JFrame
 
 		//Create and initialize the buttons. **** Edited from Oracle Documentation ListDialog.java
         addButton = new JButton("Add"); // By default sets ActionCommand to match the label
-        cancelButton.addActionListener(this);
+        addButton.addActionListener(this);
         removeButton = new JButton("Remove");
         removeButton.addActionListener(this);
 
 		//Lay out the buttons from left to right.
 		buttonPane = new JPanel();
+		buttonPane.setPreferredSize(new Dimension(800, 100));
 		buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
 		buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
 		buttonPane.add(Box.createHorizontalGlue());
@@ -74,7 +94,16 @@ public class LoyolaSchedule extends JFrame
 
 		// TO_DO: Set grid constraints
 
+<<<<<<< HEAD
 		resetLabels();
+=======
+		// sizePanels();
+
+		// schedulePane = new JPanel();
+		// schedulePane.setLayout(new GridBagLayout());
+
+
+>>>>>>> 40b9aa5a1c980bafc1a16e4f520ed5392cb8e860
 		/* TO_DO:
 			Set Layout
 				-GridBagLayout
@@ -85,51 +114,122 @@ public class LoyolaSchedule extends JFrame
 
 
 		*/
+		this.add(buttonPane, BorderLayout.PAGE_START);
+		this.setVisible(true);
 	}
 
-	public void resetLabels()
+	public void sizePanels()
 	{
 		int i;
 		// Monday
 		for (i = 0; i <= 6; i++) // Set first set of dimensions
 		{
-			
+			monday[i].setPreferredSize(new Dimension(80, 160));		
 		}
-		monday[7] // Dimensions
-		monday[8]
+		monday[7].setPreferredSize(new Dimension(100, 160)); // Dimensions
+		monday[8].setPreferredSize(new Dimension(100, 160));
 
 		// Tuesday
-		tuesday[0]
-		for (i = 1; i <= 5; i++)
+		tuesday[0].setPreferredSize(new Dimension(20, 160));
+		for (i = 1; i <= 7; i++)
 		{
-			
+			tuesday[i].setPreferredSize(new Dimension(100, 160));
 		}
-		tuesday[6]
-		tuesday[7]
 
 		// Wednesday
 		for (i = 0; i <= 6; i++)
 		{
-			
+			wednesday[i].setPreferredSize(new Dimension(80, 160));
 		}
-		wednesday[7]
-		wednesday[8]
+		wednesday[7].setPreferredSize(new Dimension(100, 160));
+		wednesday[8].setPreferredSize(new Dimension(100, 160));
 
 		// Thursday
-		thursday[0]
+		thursday[0].setPreferredSize(new Dimension(20, 160));
 		for (i = 1; i <= 5; i++)
 		{
-			
+			thursday[i].setPreferredSize(new Dimension(100, 160));
 		}
-		thursday[6]
-		thursday[7]
+		thursday[6].setPreferredSize(new Dimension(100, 160));
+		thursday[7].setPreferredSize(new Dimension(100, 160));
 
 		// Friday
 		for (i = 0; i <= 6; i++)
 		{
-			
+			friday[i].setPreferredSize(new Dimension(80, 160));
 		}
-		friday[7]
-		friday[8]
+		friday[7].setPreferredSize(new Dimension(100, 160));
+		friday[8].setPreferredSize(new Dimension(100, 160));
 	}
+
+	// public void setPanel(ScheduleEvent e)
+	// {
+	// 	courseList.add(e.getDepartment() + " " + String.valueOf(e.getCourseNumber()));
+
+	// 	int time = e.getTime;
+
+	// 	switch (e.getDay()){
+	// 		case 0:	//Monday
+	// 			monday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			monday[time].setCourseName(e.getCourseName());
+	// 			monday[time].setProfessor(e.getProfessor());
+	// 			monday[time].setBackground(e.getBackground());
+	// 			return;
+
+	// 		// Possible issues with location of Tuesday and Thursday slots
+	// 		case 1: // Tuesday
+	// 			tuesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			tuesday[time].setCourseName(e.getCourseName());
+	// 			tuesday[time].setProfessor(e.getProfessor());
+	// 			tuesday[time].setBackground(e.getBackground());
+	// 			return;
+
+	// 		case 2: // Wednesday
+	// 			wednesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			wednesday[time].setCourseName(e.getCourseName());
+	// 			wednesday[time].setProfessor(e.getProfessor());
+	// 			wednesday[time].setBackground(e.getBackground());
+	// 			return;
+
+	// 		case 3: // Thursday
+	// 			thursday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			thursday[time].setCourseName(e.getCourseName());
+	// 			thursday[time].setProfessor(e.getProfessor());
+	// 			thursday[time].setBackground(e.getBackground());
+	// 			return;
+
+	// 		case 4: // Friday
+	// 			friday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			friday[time].setCourseName(e.getCourseName());
+	// 			friday[time].setProfessor(e.getProfessor());
+	// 			friday[time].setBackground(e.getBackground());
+	// 			return;
+
+	// 		default:
+	// 			return; // Set an error message
+	// 		}
+	// }
+
+	public void actionPerformed(ActionEvent e)
+	{
+        if ("Add".equals(e.getActionCommand()))
+        {
+        	this.setVisible(false);
+            // Call add class
+        }
+    }
+
+	public static void main (String[] args)
+	{
+		new LoyolaSchedule();
+	}
+
+
 }
+
+
+
+
+
+
+
