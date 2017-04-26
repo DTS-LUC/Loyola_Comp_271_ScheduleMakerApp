@@ -20,6 +20,6 @@ import java.util.*;
 
 public class ScheduleController
 {
-	private
+	private LoyolaSchedule;
 
 }
