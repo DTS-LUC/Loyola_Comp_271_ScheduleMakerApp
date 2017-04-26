@@ -88,19 +88,19 @@ public class LoyolaSchedule extends JFrame implements ActionListener
 		sizePanels();
 
 		// schedulePane = new JPanel();
-		// schedulePane.setLayout(new GridBagLayout());
 
+		// Fill Monday Pane -Set dimensions for each pane Dimensions(160,700)
 
-		/* TO_DO:
-			Set Layout
-				-GridBagLayout
-			Create Add Button
-				- Create ActionListener
-			Create Remove Button
-				- Create ActionListener
+		// Fill Tuesday Pane
 
+		// Fill Wednesday Pane
 
-		*/
+		// Fill Thursday Pane
+
+		// Fill Friday Pane
+
+		// Fill Schedule pane left to right
+	
 		this.add(buttonPane, BorderLayout.PAGE_START);
 		this.setVisible(true);
 	}
