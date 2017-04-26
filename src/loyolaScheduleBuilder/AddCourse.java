@@ -1,51 +1,44 @@
 //READ THIS FIRST
 /*
-* I needed a place to back this up cause I'm still working on it and I'm paranoid my computer will crash
-*... this is not even close to where I want it to be tho SO gimme a hot sec before using it in the program
-* Will be uploading again later tonight...probably multiple times
-* thanks fam
-* 25 Apr 17 -- 6:18pm
-*/
+*Still not done... clearly... I am sorry I know y'all need this done I keep thinking in circles
 
+Right now, here is what I'm doing:
 
+I've scrapped a couple of different versions of this, but I am making the buttons for each option in add course. 
+Here is how they should be laid out from what I understand:
 
+BASICS
 
-
-/*
-	Pop up window for creating new events
+Pop up window for creating new events
 		-Called from main class 'Schedule'
 		-Collects information to store in 'ScheduleEvent'
 		-Returns newly 'ScheduledEvent' to 'Schedule'
-		
-	BASIC_STRUCTURE
-	
-	
-	Notes:
-		Will need to extend class JFrame JFrame
-		
-		Time variable should be selected from JComboBox (like a drop down menu). This will make it easier to assign the proper jlabel for time slots
-			-Will also limit to classes that don't align perfectly - Difficult for lab times
-	TO_DO
-		Declare variables (courseName, day(s), time, location, bgColor, anything else? ) to collect
-		
-		create JTextFields, OptionPanes, or other form to collect data in proper format
-		- JColorChooser to select background
-		
-		
-		
-		- Check boxes to select days
-			values(Monday 0, Tuesday 1, ...)
-		
-		create a new 'ScheduleEvent' with variables
-		return new 'ScheduleEvent' to main class
- */
 
-/*Add Class 
-		BASIC_STRUCTURE
-			- Add Class Button with textArea for user input of class
-			- Day Check Boxes (M-F)
-			- Time: Start and End --> Drop down boxes for 01-12 hour, 00-59 min, am & pm buttons
-			- Location: LSC only... Building Drop down, room number user input
+-JButton for AddCourse: 
+	-JButton for addcourse... 
+	-Action Listener adds course 
+	-Tied to ScheduleEvent
+	*Action Listener takes activity within AddCourse class and links it to ScheduleEvent
+-JCheckBox Course Days
+	-JCheckBox for each course day (M-T-W-TH-F)
+	*ActionListener should add days to the array in ScheduleEvent.java based on the Day selected
+-JComboBox Course Time (Military--it's easier)
+	-JComboBox for each hour (01-23)
+	-JComboBox for each minute (00-59)
+	*Action: Tie the integer provided in hour and minute to the integer linked in each array
+	
+
+-Add action Listeners for each of these and link them Controller class
+
+
+
+IF WE HAVE TIME WE CAN ADD SHIT FOR MORE DETAILS
+-department
+-prof
+-course #
+-Location
+	
+~fUtUrE ideas~	- Location: LSC only... Building Drop down, room number user input
 					For program additions later on, we could also put
 						-Campus drop down
 						-Professor (User input)
