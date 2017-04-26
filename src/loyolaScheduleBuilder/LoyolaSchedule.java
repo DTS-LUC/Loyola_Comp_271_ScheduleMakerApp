@@ -40,7 +40,7 @@ public class LoyolaSchedule extends JFrame
 	private JLabel[] monday = new JLabel[9];
 	private JLabel[] tuesday = new JLabel[8]; // Contains a blank label for alignment
 	private JLabel[] wednesday = new JLabel[9];
-	private JLabel[] thursday = new JLabel[8];
+	private JLabel[] thursday = new JLabel[8]; // Matches Tuesday
 	private JLabel[] friday = new JLabel[9];
 	
 	public LoyolaSchedule()
@@ -74,7 +74,7 @@ public class LoyolaSchedule extends JFrame
 
 		// TO_DO: Set grid constraints
 
-		resetLabels()
+		resetLabels();
 		/* TO_DO:
 			Set Layout
 				-GridBagLayout
