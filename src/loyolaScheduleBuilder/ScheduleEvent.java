@@ -1,5 +1,4 @@
-
-package loyolaScheduleBuilder;
+//package loyolaScheduleBuilder;
 
 import java.awt.Color;
 import java.lang.*;

@@ -4,7 +4,7 @@
 	Action Listeners for add and remove class
 */
 
-package loyolaScheduleBuilder;
+//package loyolaScheduleBuilder;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -74,6 +74,7 @@ public class ScheduleController
 		public void actionPerformed(ActionEvent e)
 		{
 			// Need to build removeCourse method in RemoveClass to retrieve selected course
+			// Should return string course name
 			theSchedule.removePanel(viewRemove.removeCourse());
 			// Need to build remove method in theSchedule
 

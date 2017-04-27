@@ -7,7 +7,7 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.BorderLayout;
 
-public class LoyolaSchedule extends JFrame implements ActionListener
+public class LoyolaSchedule extends JFrame
 {
 	// Components needed for schedule GUI
 
@@ -51,9 +51,9 @@ public class LoyolaSchedule extends JFrame implements ActionListener
 
 		//Create and initialize the buttons. **** Edited from Oracle Documentation ListDialog.java
         addButton = new JButton("Add"); // By default sets ActionCommand to match the label
-        addButton.addActionListener(this);
+        // addButton.addActionListener(this);
         removeButton = new JButton("Remove");
-        removeButton.addActionListener(this);
+        // removeButton.addActionListener(this);
 
 		//Lay out the buttons from left to right.
 		buttonPane = new JPanel();
@@ -177,6 +177,13 @@ public class LoyolaSchedule extends JFrame implements ActionListener
 			default:
 				return; // Set an error message
 			}
+	}
+
+	public void removePanel(String toRemove)
+	{
+
+
+		
 	}
 
 	public void actionPerformed(ActionEvent e)
