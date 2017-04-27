@@ -20,7 +20,7 @@ public class RemoveClass extends JFrame{
 	JComboBox Classes;
 	String CurrentClass="";
 	
-	public RemoveClass(String[] courseList){
+	public RemoveClass(){
 		
 		this.setSize(400,400);
 
