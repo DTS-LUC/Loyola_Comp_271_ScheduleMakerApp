@@ -1,178 +1,195 @@
-//READ THIS FIRST
-/*
-*Still not done... clearly... I am sorry I know y'all need this done I keep thinking in circles
-
-Right now, here is what I'm doing:
-
-I've scrapped a couple of different versions of this, but I am making the buttons for each option in add course. 
-Here is how they should be laid out from what I understand:
-
-BASICS
-
-Pop up window for creating new events
-		-Called from main class 'Schedule'
-		-Collects information to store in 'ScheduleEvent'
-		-Returns newly 'ScheduledEvent' to 'Schedule'
-
--JButton for AddCourse: 
-	-JButton for addcourse... 
-	-Action Listener adds course 
-	-Tied to ScheduleEvent
-	*Action Listener takes activity within AddCourse class and links it to ScheduleEvent
--JCheckBox Course Days
-	-JCheckBox for each course day (M-T-W-TH-F)
-	*ActionListener should add days to the array in ScheduleEvent.java based on the Day selected
--JComboBox Course Time (Military--it's easier)
-	-JComboBox for each hour (01-23)
-	-JComboBox for each minute (00-59)
-	*Action: Tie the integer provided in hour and minute to the integer linked in each array
-	
-
--Add action Listeners for each of these and link them Controller class
-
-
-
-IF WE HAVE TIME WE CAN ADD SHIT FOR MORE DETAILS
--department
--prof
--course #
--Location
-	
-~fUtUrE ideas~	- Location: LSC only... Building Drop down, room number user input
-					For program additions later on, we could also put
-						-Campus drop down
-						-Professor (User input)
-							--with link to info/pic of prof
-							--link to syllabus & office hour schedule
-								---option to display office hour schedule over your own to see when you could go
-						-Subject & Class #
-						-etc. ... time constraints though so we will not work with these right now
-			- Color of class input
-			- The main class will then add the class input
-			
-*/
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.*;
-
 import java.awt.event.*;
 
-public class AddCourse extends JFrame{
+
+package loyolaScheduleBuilder;
+
+public class AddCourse extends JFrame {
 	
 	JButton addCourseB;
-	JTextField addCourseTF;
-	JTextArea addCourseTxtA;
-	String newCourse; 
+	JTextField addCourseBTF;
+	String newCourse;
 	
-	public static void main(String[] args){
+	JCheckBox mCheck;
+	JCheckBox tCheck;
+	JCheckBox wCheck;
+	JCheckBox thCheck;
+	JCheckBox fCheck; 
+	
+	JComboBox hourOfCourse;
+	JComboBox minOfCourse;
+	
+	public static void main(String[] args) {
 		
 		new AddCourse();
 		
 	}
-
+		
 	public AddCourse(){
 		
-		//Panel: newCourseP ... houses components of Course Addition
+		//FRAME
+		
+		this.setSize(500,500);
+				
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Dimension dim = tk.getScreenSize();
+		
+		int xPos = (dim.width/2)-(this.getWidth()/2);
+		int yPos = (dim.height/2)-(this.getHeight()/2);
+		
+		this.setLocation(xPos, yPos);
+		
+		this.setResizable(false);
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		this.setTitle("Course Addition");
+		
+		//PANEL: newCourseP ... houses components of Course Addition
 		
 		JPanel newCourseP = new JPanel();
 		newCourseP.setLayout(new BorderLayout());
 		
-			//Button for newCourseP
+			//Add Course Button
 			addCourseB = new JButton("Add Course");
 			
-			newCourseP.add(addCourseB); //adds it to the panel
+			newCourseP.add(addCourseB, BorderLayout.NORTH); //adds it to the panel
 			
-				//Text Field: newCoursePTF... where user will input their new Course
-				JTextField newCoursePTF = new JTextField("", 35);
+				//Text Field for Add Course (addCourseBTF --> Add course button text field)
+				JTextField addCourseBTF = new JTextField("",35);
 				
-				newCoursePTF.setColumns(10);
+				addCourseBTF.setColumns(10);
 				
-				newCoursePTF.setText("");
+				addCourseBTF.setText("");
 				
-				newCourseP.add(newCoursePTF); //adds field to panel
-			
-			//JCheckbox --> Days
-			
+				newCourseP.add(addCourseBTF);
+				
+				//Button Listener
+				ListenForButton lForButton = new ListenForButton();
+				
+				addCourseB.addActionListener(lForButton);
+				
+			//M-T-W-TH-F Checkboxes
 			JPanel checkBoxPanel = new JPanel();
 				
-			JCheckBox mButton;
-			JCheckBox tButton;
-			JCheckBox wButton;
-			JCheckBox thButton;
-			JCheckBox fButton; 
-			
-			/*
-			 * There are 25 possible combinations for these days... 
-			 * 0 days
-			 * 1 of the 5 days (5! ways, 5 without difference )
-			 * 2 of the five days (60 [5!/2!], ...)
-			 * 3 of the five days (20)
-			 * 4 of the five days (5)
-			 * 5 days
-			 */
-			
-				//Here we create the checkboxes and add them to the check box panel
-				mButton = new JCheckBox("M");
-				checkBoxPanel.add(mButton);
+			JCheckBox mCheck;
+			JCheckBox tCheck;
+			JCheckBox wCheck;
+			JCheckBox thCheck;
+			JCheckBox fCheck; 
 				
-				tButton = new JCheckBox("T");
-				checkBoxPanel.add(tButton);
-				
-				wButton = new JCheckBox("W");
-				checkBoxPanel.add(wButton);
-				
-				thButton = new JCheckBox("TH");
-				checkBoxPanel.add(thButton);
-				
-				fButton = new JCheckBox("F");
-				checkBoxPanel.add(fButton);
-				
+					//Here we create each checkbox and add it to the check box panel
+					mCheck = new JCheckBox("M");
+					checkBoxPanel.add(mCheck);
+					
+					tCheck = new JCheckBox("T");
+					checkBoxPanel.add(tCheck);
+					
+					wCheck = new JCheckBox("W");
+					checkBoxPanel.add(wCheck);
+					
+					thCheck = new JCheckBox("TH");
+					checkBoxPanel.add(thCheck);
+					
+					fCheck = new JCheckBox("F");
+					checkBoxPanel.add(fCheck);
+					
+				//Now add the checkBoxPanel to the newCourseP
 				newCourseP.add(checkBoxPanel);
 				
+				//Create the listeners
+				ListenForButton lAddDay = new ListenForButton();
 				
-				
-				
-				//Now the Listeners
-				mButton.addDayListener(this);
-				tButton.addDayListener(this);
-				wButton.addDayListener(this);
-				thButton.addDayListener(this);
-				fButton.addDayListener(this);
-				
-				//Indicate what days you can choose
-				choices = new StringBuffer("M-T-W-TH-F");
-				
-				
-				
-				add(addCourseP, BorderLayout.LINE_START);
-				setBorder(BorderFactory.createEmptyBorder(20,20,20,20));// Unclear from java tutorial on oracle??? 
-				
-				
-			//JComboBox & JRadioButton--> Time
-			private
+				mCheck.addActionListener(lAddDay);
+				tCheck.addActionListener(lAddDay);
+				wCheck.addActionListener(lAddDay);
+				thCheck.addActionListener(lAddDay);
+				fCheck.addActionListener(lAddDay);
 			
+				add(newCourseP,BorderLayout.LINE_START);
+				setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+				
+			//Time Drop Down Box (JComboBox)
+			JPanel comboBoxPanel = new JPanel();
+				
+			//String[] hours = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
+			//JComboBox hourCB = new JComboBox(hours);
+			//String[] minutes = {{"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29",
+			
+			int totalHours = 23;
+			Integer[] hourOfCourse = new Integer[totalHours];
+			int inc = 1;
+			for(int i=0; i < totalHours; i++){
+				hourOfCourse[i]= inc;
+				inc++;
 			}
 			
+			JComboBox<Integer> hourOfCourse = new JComboBox<>(hourOfCourse);
+			
+			
+			int totalMin = 59;
+			Integer[] minOfCourse = new Integer[totalMin];
+			int incr = 1;
+			for(int i=0; i < totalMin; i++){
+				minOfCourse[i]= inc;
+				incr++;
+			}
+			
+			JComboBox<Integer> minOfCourse = new JComboBox<>(minOfCourse);
+			
+			//Add comboBoxPanel to the newCourseP
+			newCourseP.add(comboBoxPanel);
+			
+			
+		this.add(newCourseP); //Adds Course Panel to Frame		
 				
-				
-			
-			
-			
-			
-		this.add(newCourseP);
-		
 		this.setVisible(true);
-		
+				
 	}
-	
-	//Implements Listeners for all our controls (i.e., gives them actions)
-	
-	private class dayCheckBox implements ItemListener{
+	//Add Course Button Listener
+	private class ListenForButton implements ActionListener{
 		
-		public void actionPerformed(KeyEvent )
-		
+		public void actionPerformed(ActionEvent e){
+			
+			if(e.getSource == addCourseB){
+				
+				int courseAdded = Courses.getSelectedIndex(addCourseBTF);
+				Courses.addItemAt(courseAdded);
+			}
+		}
 	}
+	//Course Day Listener
+	private class lAddDay implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e){
+			
+			if(e.getSource == mCheck){
+				int dayOfCourse = Course.getSelectedIndex(addCourseBTF);
+				//Here is where I want to add the Monday class selected to our arrays... but idk how to do that
+			if(e.getSource == tCheck){
+				int dayOfCourse = Course.getSelectedIndex(addCourseBTF);
+				//Same for Tuesday
+			if(e.getSource == wCheck){
+				int dayOfCourse = Course.getSelectedIndex(addCourseBTF);
+				//Same for Wedensday
+			if(e.getSource == thCheck){
+				int dayOfCourse = Course.getSelectedIndex(addCourseBTF);
+				//Thursday
+			if(e.getSource == fCheck){
+				int dayOfCourse = Course.getSelectedIndex(addCourseBTF);
+				//Friday
+			}	
+			}
+			}
+			}
+			}
+		}
+	}
+	//Course Time Listener
+	
+	
 	
 }
