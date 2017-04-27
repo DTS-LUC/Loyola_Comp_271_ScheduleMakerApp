@@ -69,8 +69,11 @@ public class LoyolaSchedule extends JFrame
 
 		// schedulePane = new JPanel();
 
-		// Fill Monday Pane -Set dimensions for each pane Dimensions(160,700)
-
+		// Fill Monday Pane
+		monPane = new JPanel();
+		monPane.setPreferredSize(new Dimension(160,700));
+		monPane.setLayout(new )
+		
 		// Fill Tuesday Pane
 
 		// Fill Wednesday Pane
