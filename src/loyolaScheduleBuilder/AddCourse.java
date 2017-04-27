@@ -32,7 +32,7 @@ public class AddCourse extends JFrame {
 		
 		//FRAME
 		
-		this.setSize(500,500);
+		this.setSize(700,300);
 				
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		Dimension dim = tk.getScreenSize();
@@ -44,19 +44,20 @@ public class AddCourse extends JFrame {
 		
 		this.setResizable(false);
 		
-		// this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setTitle("Course Addition");
 		
 		//PANEL: newCourseP ... houses components of Course Addition
 		
 		JPanel newCourseP = new JPanel();
-		newCourseP.setLayout(new BorderLayout());
+		//newCourseP.setLayout(new BorderLayout());
 		
 			//Add Course Button
 			addCourseB = new JButton("Add Course");
 			
-			newCourseP.add(addCourseB, BorderLayout.NORTH); //adds it to the panel
+				
+			newCourseP.add(addCourseB); //adds it to the panel
 			
 				//Text Field for Add Course (addCourseBTF --> Add course button text field)
 				JTextField addCourseBTF = new JTextField("",35);
@@ -68,9 +69,18 @@ public class AddCourse extends JFrame {
 				newCourseP.add(addCourseBTF);
 				
 				//Button Listener
-				// ListenForButton lForButton = new ListenForButton();
+				 ListenForButton lForButton = new ListenForButton();
 				
-				// addCourseB.addActionListener(lForButton);
+				 addCourseB.addActionListener(lForButton);
+				 
+				 //Text Area to test for classes added
+				 JTextArea textArea1;
+				 
+				 textArea1 = new JTextArea(10,10);
+				 
+				 textArea1.setText("");
+				 
+				 newCourseP.add(textArea1);
 				
 			//M-T-W-TH-F Checkboxes
 			JPanel checkBoxPanel = new JPanel();
@@ -101,7 +111,7 @@ public class AddCourse extends JFrame {
 				newCourseP.add(checkBoxPanel,BorderLayout.CENTER);
 				
 				//Create the listeners
-				// ListenForButton lAddDay = new ListenForButton();
+				//ListenForButton lAddDay = new ListenForButton();
 				
 				// mCheck.addActionListener(lAddDay);
 				// tCheck.addActionListener(lAddDay);
@@ -113,32 +123,38 @@ public class AddCourse extends JFrame {
 				// setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 				
 			//Time Drop Down Box (JComboBox)
-			// JPanel comboBoxPanel = new JPanel();
-				
+			JPanel comboBoxPanel = new JPanel();
+			
 			//String[] hours = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
 			//JComboBox hourCB = new JComboBox(hours);
 			//String[] minutes = {{"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29",
 			
-			// int totalHours = 23;
-			// Integer[] hourOfCourse = new Integer[totalHours];
-			// int inc = 1;
-			// for(int i=0; i < totalHours; i++){
-			// 	hourOfCourse[i]= inc;
-			// 	inc++;
-			// }
 			
-			// JComboBox<Integer> hourOfCourse = new JComboBox<>(hourOfCourse);
+			 int totalHours = 23;
+			 Integer[] hourOfCourse = new Integer[totalHours];
+			 int inc = 1;
+			 for(int i=0; i < totalHours; i++){
+			 	hourOfCourse[i]= inc;
+			 	inc++;
+			 }
+			
+			 JComboBox<Integer> hourBox = new JComboBox<>(hourOfCourse);
+			 
+			 newCourseP.add(hourBox);
 			
 			
-			// int totalMin = 59;
-			// Integer[] minOfCourse = new Integer[totalMin];
-			// int incr = 1;
-			// for(int i=0; i < totalMin; i++){
-			// 	minOfCourse[i]= inc;
-			// 	incr++;
-			// }
 			
-			// JComboBox<Integer> minOfCourse = new JComboBox<>(minOfCourse);
+			 int totalMin = 59;
+			 Integer[] minOfCourse = new Integer[totalMin];
+			 int incr = 1;
+			 for(int i=0; i < totalMin; i++){
+				minOfCourse[i]= incr;
+			 	incr++;
+			 }
+			
+			 JComboBox<Integer> minBox = new JComboBox<>(minOfCourse);
+			 
+			 newCourseP.add(minBox);
 			
 			//Add comboBoxPanel to the newCourseP
 			// newCourseP.add(comboBoxPanel);
@@ -149,18 +165,25 @@ public class AddCourse extends JFrame {
 		this.setVisible(true);
 				
 	}
-	// //Add Course Button Listener
-	// private class ListenForButton implements ActionListener{
+	//Add Course Button Listener
+	 private class ListenForButton implements ActionListener{
 		
-	// 	public void actionPerformed(ActionEvent e){
+		public void actionPerformed(ActionEvent e){
 			
-	// 		if(e.getSource == addCourseB){
+			//double.parseDouble(addCourseBTF.getText());
+			
+	 		if(e.getSource() == addCourseB){
 				
-	// 			int courseAdded = Courses.getSelectedIndex(addCourseBTF);
-	// 			Courses.addItemAt(courseAdded);
-	// 		}
-	// 	}
-	// }
+	 			String courseName = addCourseBTF.getSelectedText();
+	 			
+	 			//textArea1.append(courseName + "\n");
+	 			
+	 			
+	 			//int courseAdded = Courses.getSelectedIndex(addCourseBTF);
+	 			//Courses.addItemAt(courseAdded);
+	 		}
+	 	}
+	 }
 	// //Course Day Listener
 	// private class lAddDay implements ActionListener{
 		
@@ -174,7 +197,7 @@ public class AddCourse extends JFrame {
 	// 			//Same for Tuesday
 	// 		if(e.getSource == wCheck){
 	// 			int dayOfCourse = Course.getSelectedIndex(addCourseBTF);
-	// 			//Same for Wedensday
+	// 			//Same for Wednesday
 	// 		if(e.getSource == thCheck){
 	// 			int dayOfCourse = Course.getSelectedIndex(addCourseBTF);
 	// 			//Thursday
