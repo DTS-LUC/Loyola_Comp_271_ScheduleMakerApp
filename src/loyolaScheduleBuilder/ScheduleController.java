@@ -31,10 +31,9 @@ public class ScheduleController
 
 	private List<String> courseList;
 	
-	public ScheduleController(LoyolaSchedule theSchedule, RemoveClass viewRemove, AddClass viewAdd, ) {
+	public ScheduleController(LoyolaSchedule theSchedule)
+	{
 		this.theSchedule = theSchedule;
-		
-		this.theView.addCalculateListener(new CalculateListener());
 	}
 
 
@@ -46,7 +45,7 @@ public class ScheduleController
 		{
 			// Needs to call viewAdd
 			viewAdd = new AddClass();
-			
+			viewAdd.toFront();
 		}
 		
 	}
@@ -58,7 +57,9 @@ public class ScheduleController
 		public void actionPerformed(ActionEvent e)
 		{
 			// Needs to collect ScheduleEvent and pass it to the setEventPanel in theSchedule
-			
+			theSchedule.addPanel(viewAdd.getCourse());
+			viewAdd.setVisible(false);
+			viewAdd.dispose();
 		}
 		
 	}
@@ -83,14 +84,12 @@ public class ScheduleController
 		public void actionPerformed(ActionEvent e)
 		{
 			// Need to build removeCourse method in RemoveClass to retrieve selected course
-			String removedClass = new String(viewRemove.removeCourse());
+			theSchedule.removePanel(viewRemove.removeCourse());
+			// Need to build remove method in theSchedule
+
 			viewRemove.setVisible(false);
 			viewRemove.dispose();
-
-			//
-			theSchedule.removePanel(removedClass); //need to build in theSchedule
-			//
-
+			
 		}
 		
 	}
