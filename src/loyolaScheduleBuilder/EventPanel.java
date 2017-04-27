@@ -14,6 +14,7 @@ public class EventPanel extends JPanel
 	public EventPanel()
 	{
 		// How to distinguish time
+		// Set a border
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 	} 
 

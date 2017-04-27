@@ -47,16 +47,20 @@ public class LoyolaSchedule extends JFrame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Loyola Schedule Builder");
 
+
+
+
 		//Create and initialize the buttons. **** Edited from Oracle Documentation ListDialog.java
         addButton = new JButton("Add"); // By default sets ActionCommand to match the label
-        // addButton.addActionListener(this);
         removeButton = new JButton("Remove");
-        // removeButton.addActionListener(this);
+
+
+
 
 		//Lay out the buttons from left to right.
 		buttonPane = new JPanel();
 		buttonPane.setPreferredSize(new Dimension(800, 100));
-		buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
+		buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.X_AXIS));
 		buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
 		buttonPane.add(Box.createHorizontalGlue());
 		buttonPane.add(addButton);
@@ -72,7 +76,11 @@ public class LoyolaSchedule extends JFrame
 		// Fill Monday Pane
 		monPane = new JPanel();
 		monPane.setPreferredSize(new Dimension(160,700));
-		monPane.setLayout(new )
+		monPane.setLayout(new BoxLayout(monPane, BoxLayout.Y_AXIS));
+		for (int i = 0;i <= 8; i++)
+		{
+			monPane.add(monday[i]);	
+		}
 		
 		// Fill Tuesday Pane
 
@@ -134,8 +142,6 @@ public class LoyolaSchedule extends JFrame
 
 	public void setPanel(ScheduleEvent e)
 	{
-		courseList.add(e.getDepartment() + " " + String.valueOf(e.getCourseNumber()));
-
 		int time = e.getTime;
 
 		switch (e.getDay()){
@@ -178,6 +184,18 @@ public class LoyolaSchedule extends JFrame
 			default:
 				return; // Set an error message
 			}
+	}
+
+	// Add ActionListener to AddButton
+	public void addAddButtonListener(ActionListener listenForAddButton)
+	{
+		addButton.addActionListener(listenForAddButton);
+	}
+
+	// Add ActionListener to RemoveButton
+	public void addRemoveButtonListener(ActionListener listenForRemoveButton)
+	{
+		removeButton.addActionListener(listenForRemoveButton);
 	}
 
 	public void removePanel(String toRemove)
