@@ -25,7 +25,8 @@ public class removeClass extends JFrame{
 		
 		new removeClass();
 	}
-	private RemoveClass(){
+	public void RemoveClass(ActionEvent e){
+		Classes = new JComboBox();
 		
 	}
 	
