@@ -1,21 +1,3 @@
-// GUI (Swing) class for displaying schedule
-/*
-	BASIC_STRUCTURE (old)
-		-JButton AddClass
-		-JButton RemoveClass
-		-JMenu {"New", "Print"}
-		-JLabel[42] TimeSlots (Will just read, then write, data recieved from 'LoyolaEvent'
-		-Keylistener for buttons
-		
-	TO_DO (old)
-		- Create constructor
-		- Create event listeners for jButtons
-		- Create methods for calling other classes
-		- Method for removing events (Will simply clear JLabels)
-		- Figure out menu bar
-			- Also how to print schedule
-		
-*/
 // package loyolaScheduleBuilder;
 
 import java.awt.event.*;
@@ -88,19 +70,19 @@ public class LoyolaSchedule extends JFrame implements ActionListener
 		sizePanels();
 
 		// schedulePane = new JPanel();
-		// schedulePane.setLayout(new GridBagLayout());
 
+		// Fill Monday Pane -Set dimensions for each pane Dimensions(160,700)
 
-		/* TO_DO:
-			Set Layout
-				-GridBagLayout
-			Create Add Button
-				- Create ActionListener
-			Create Remove Button
-				- Create ActionListener
+		// Fill Tuesday Pane
 
+		// Fill Wednesday Pane
 
-		*/
+		// Fill Thursday Pane
+
+		// Fill Friday Pane
+
+		// Fill Schedule pane left to right
+	
 		this.add(buttonPane, BorderLayout.PAGE_START);
 		this.setVisible(true);
 	}
