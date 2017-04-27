@@ -20,18 +20,7 @@ public class RemoveClass extends JFrame{
 	JComboBox Classes;
 	String CurrentClass="";
 	
-		
-	// public static void main(String[] args){
-		
-	// 	new removeClass();
-	// }
-
-	public void RemoveClass(ActionEvent e){
-		Classes = new JComboBox();
-		
-	}
-	
-	public RemoveClass(){
+	public RemoveClass(String[] courseList){
 		
 		this.setSize(400,400);
 
@@ -48,9 +37,7 @@ public class RemoveClass extends JFrame{
 	
 
 		this.setResizable(false); 
-		
-		// this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+				
 		this.setTitle("Remove Class");
 		
 		JPanel thePanel = new JPanel();
