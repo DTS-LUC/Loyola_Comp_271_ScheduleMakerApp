@@ -43,9 +43,7 @@ public class AddCourse extends JFrame {
 		this.setLocation(xPos, yPos);
 		
 		this.setResizable(false);
-		
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+				
 		this.setTitle("Course Addition");
 		
 		//PANEL: newCourseP ... houses components of Course Addition
