@@ -3,6 +3,7 @@
 import java.awt.Color;
 import java.lang.*;
 import javax.swing.*;
+import java.awt.Dimension;
 
 public class EventPanel extends JPanel
 {
@@ -11,11 +12,12 @@ public class EventPanel extends JPanel
 	private JLabel	courseName;
 	private JLabel	professor;
 
-	public EventPanel()
+	public EventPanel(int x, int y)
 	{
 		// How to distinguish time
 		// Set a border
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		this.setBorder(BorderFactory.createLineBorder(Color.black));
+		this.setPreferredSize(new Dimension(x, y));
 	} 
 
 	private void setCourse(String dept, int cNum)
@@ -40,5 +42,13 @@ public class EventPanel extends JPanel
 	public String getCourse()
 	{
 		return courseString;
+	}
+
+	public void clear()
+	{
+		courseString = null;
+		courseLabel = null;
+		courseName = null;
+		professor = null;
 	}
 }

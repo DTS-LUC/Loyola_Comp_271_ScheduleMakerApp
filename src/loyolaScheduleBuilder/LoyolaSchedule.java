@@ -1,11 +1,15 @@
 // package loyolaScheduleBuilder;
+// Need to figure out how to get proper dimensions set
+
 
 import java.awt.event.*;
 import java.awt.Toolkit;
 import java.awt.Dimension;
 import java.util.*;
 import javax.swing.*;
-import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+
 
 public class LoyolaSchedule extends JFrame
 {
@@ -35,7 +39,7 @@ public class LoyolaSchedule extends JFrame
 	
 	public LoyolaSchedule()
 	{
-		this.setSize(800, 800);
+		this.setSize(850, 900);
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		this.setVisible(true);
 		Dimension dim = tk.getScreenSize();
@@ -48,7 +52,7 @@ public class LoyolaSchedule extends JFrame
 		this.setTitle("Loyola Schedule Builder");
 
 
-
+		Box mainBox = Box.createVerticalBox();
 
 		//Create and initialize the buttons. **** Edited from Oracle Documentation ListDialog.java
         addButton = new JButton("Add"); // By default sets ActionCommand to match the label
@@ -60,84 +64,121 @@ public class LoyolaSchedule extends JFrame
 		//Lay out the buttons from left to right.
 		buttonPane = new JPanel();
 		buttonPane.setPreferredSize(new Dimension(800, 100));
-		buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.X_AXIS));
 		buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
 		buttonPane.add(Box.createHorizontalGlue());
 		buttonPane.add(addButton);
 		buttonPane.add(Box.createRigidArea(new Dimension(10, 0)));
 		buttonPane.add(removeButton);
 
-		// TO_DO: Set grid constraints
 
 		sizePanels();
 
-		// schedulePane = new JPanel();
+		schedulePane = new JPanel();
+		schedulePane.setPreferredSize(new Dimension(850, 800));
 
 		// Fill Monday Pane
 		monPane = new JPanel();
-		monPane.setPreferredSize(new Dimension(160,700));
-		monPane.setLayout(new BoxLayout(monPane, BoxLayout.Y_AXIS));
+		monPane.setPreferredSize(new Dimension(160,800));
+		Box mondayBox = Box.createVerticalBox();
 		for (int i = 0;i <= 8; i++)
 		{
-			monPane.add(monday[i]);	
+			mondayBox.add(monday[i]);
 		}
+		monPane.add(mondayBox);
 		
 		// Fill Tuesday Pane
+		tuePane = new JPanel();
+		tuePane.setPreferredSize(new Dimension(160,800));
+		Box tuesdayBox = Box.createVerticalBox();
+		for (int i = 0;i <= 7; i++)
+		{
+			tuesdayBox.add(tuesday[i]);
+		}
+		tuePane.add(tuesdayBox);
 
 		// Fill Wednesday Pane
+		wedPane = new JPanel();
+		wedPane.setPreferredSize(new Dimension(160,800));
+		Box wednesdayBox = Box.createVerticalBox();
+		for (int i = 0;i <= 8; i++)
+		{
+			wednesdayBox.add(wednesday[i]);
+		}
+		wedPane.add(wednesdayBox);
 
 		// Fill Thursday Pane
+		thrPane = new JPanel();
+		thrPane.setPreferredSize(new Dimension(160,800));
+		Box thursdayBox = Box.createVerticalBox();
+		for (int i = 0;i <= 7; i++)
+		{
+			thursdayBox.add(thursday[i]);
+		}
+		thrPane.add(thursdayBox);
 
 		// Fill Friday Pane
+		friPane = new JPanel();
+		friPane.setPreferredSize(new Dimension(160,800));
+		Box fridayBox = Box.createVerticalBox();
+		for (int i = 0;i <= 8; i++)
+		{
+			fridayBox.add(friday[i]);
+		}
+		friPane.add(fridayBox);
 
 		// Fill Schedule pane left to right
-	
-		this.add(buttonPane, BorderLayout.PAGE_START);
+		schedulePane.add(monPane);
+		schedulePane.add(tuePane);
+		schedulePane.add(wedPane);
+		schedulePane.add(thrPane);
+		schedulePane.add(friPane);
+
+		mainBox.add(buttonPane);
+		mainBox.add(schedulePane);
+		this.add(mainBox);
 		this.setVisible(true);
 	}
 
 	public void sizePanels()
 	{
-		int i;
+		int i = 0;
 		// Monday
 		for (i = 0; i <= 6; i++) // Set first set of dimensions
 		{
-			monday[i].setPreferredSize(new Dimension(80, 160));		
+			monday[i] = new EventPanel(160, 80);		
 		}
-		monday[7].setPreferredSize(new Dimension(100, 160)); // Dimensions
-		monday[8].setPreferredSize(new Dimension(100, 160));
+		monday[7] = new EventPanel(160, 100);
+		monday[8] = new EventPanel(160, 100);
 
 		// Tuesday
-		tuesday[0].setPreferredSize(new Dimension(20, 160));
+		tuesday[0] = new EventPanel(160, 25);
 		for (i = 1; i <= 7; i++)
 		{
-			tuesday[i].setPreferredSize(new Dimension(100, 160));
+			tuesday[i] = new EventPanel(160, 105);
 		}
 
 		// Wednesday
 		for (i = 0; i <= 6; i++)
 		{
-			wednesday[i].setPreferredSize(new Dimension(80, 160));
+			wednesday[i] = new EventPanel(160, 80);
 		}
-		wednesday[7].setPreferredSize(new Dimension(100, 160));
-		wednesday[8].setPreferredSize(new Dimension(100, 160));
+		wednesday[7] = new EventPanel(160, 100);
+		wednesday[8] = new EventPanel(160, 100);
 
 		// Thursday
-		thursday[0].setPreferredSize(new Dimension(20, 160));
-		for (i = 1; i <= 5; i++)
+		thursday[0] = new EventPanel(160, 25);
+		for (i = 1; i <= 7; i++)
 		{
-			thursday[i].setPreferredSize(new Dimension(100, 160));
+			thursday[i] = new EventPanel(160, 105);
 		}
-		thursday[6].setPreferredSize(new Dimension(100, 160));
-		thursday[7].setPreferredSize(new Dimension(100, 160));
 
 		// Friday
 		for (i = 0; i <= 6; i++)
 		{
-			friday[i].setPreferredSize(new Dimension(80, 160));
+			friday[i] = new EventPanel(160, 80);
 		}
-		friday[7].setPreferredSize(new Dimension(100, 160));
-		friday[8].setPreferredSize(new Dimension(100, 160));
+		friday[7] = new EventPanel(160, 100);
+		friday[8] = new EventPanel(160, 100);
 	}
 
 	public void setPanel(ScheduleEvent e)
@@ -198,28 +239,27 @@ public class LoyolaSchedule extends JFrame
 		removeButton.addActionListener(listenForRemoveButton);
 	}
 
-	public void removePanel(String toRemove)
+	// Not the most effective means
+	public void clearPanel(String toRemove)
 	{
+		for(int i = 0; i <= 8; i++)
+		{
+			if(toRemove.equals(monday[i].getCourse))
+			{
+				monday[i].clear();
+			}
 
+			if(toRemove.equals(wednesday[i].getCourse))
+			{
+				wednesday[i].clear();
+			}
 
-
+			if(toRemove.equals(friday[i].getCourse))
+			{
+				friday[i].clear();
+			}
+		}
 	}
-
-	public void actionPerformed(ActionEvent e)
-	{
-        if ("Add".equals(e.getActionCommand()))
-        {
-        	this.setVisible(false);
-            // Call add class
-        }
-    }
-
-	public static void main (String[] args)
-	{
-		new LoyolaSchedule();
-	}
-
-
 }
 
 

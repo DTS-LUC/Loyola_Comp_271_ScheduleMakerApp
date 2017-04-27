@@ -11,7 +11,7 @@ public class ScheduleEvent
 	private String professor;
 	private int[]	daySlots;	// Integer 0 = Monday, 1 = Tuesday,...
 	private int timeSlot;
-	private Color background = Color.GREEN;
+	// private Color background = Color.GREEN;
 
 // Constructor
 	public ScheduleEvent (String dept, int cNum, String cName, String prof, int[] dSlot, int tSlot, Color bGround)
@@ -35,7 +35,7 @@ public class ScheduleEvent
 		this.timeSlot = tSlot;
 
 		// Add background color
-		this.background = bGround;
+		// this.background = bGround;
 	} 
 
 // Methods for setting individual data fields
@@ -69,10 +69,10 @@ public class ScheduleEvent
 		this.timeSlot = tSlot;
 	}
 
-	public void setBackground(Color bGround)
-	{
-		this.background = bGround;
-	}
+	// public void setBackground(Color bGround)
+	// {
+	// 	this.background = bGround;
+	// }
 
 
 

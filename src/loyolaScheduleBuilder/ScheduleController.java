@@ -17,13 +17,15 @@ public class ScheduleController
 	
 	private LoyolaSchedule theSchedule;
 	private RemoveClass viewRemove;
-	private AddClass viewAdd;
+	private AddCourse viewAdd;
 
 	private List<String> courseList;
 	
 	public ScheduleController()
 	{
 		theSchedule = new LoyolaSchedule();
+		theSchedule.addAddButtonListener(new addClassListener());
+		theSchedule.addRemoveButtonListener(new removeClassListener());
 	}
 
 
@@ -34,7 +36,8 @@ public class ScheduleController
 		public void actionPerformed(ActionEvent e)
 		{
 			// Needs to call viewAdd
-			viewAdd = new AddClass();
+			viewAdd = new AddCourse();
+			//Add button new addListener() listener here
 			viewAdd.toFront();
 		}
 		
@@ -61,7 +64,9 @@ public class ScheduleController
 		public void actionPerformed(ActionEvent e)
 		{
 			// Needs to pass course list to removeView
-			viewRemove = new RoveClass(courseList);
+			viewRemove = new RemoveClass(courseList);
+			//Add button new removeListener() listener here
+
 			viewRemove.toFront();
 		}
 		
@@ -85,5 +90,7 @@ public class ScheduleController
 		
 	}
 
-	
+	public static void main(String[] args) {
+			new ScheduleController();
+		}	
 }
