@@ -1,7 +1,7 @@
+
 /* Remove Class	Similar to Add class		
 BASIC_STRUCTURE			
-	- Combo box that displays current classes
-			- Returns location of box selected
+	- Combo box that displays current classes			- Returns location of box selected
 			- The main class will then clear the time slot label
 			
 */
@@ -25,11 +25,14 @@ public class removeClass extends JFrame{
 		
 		new removeClass();
 	}
+	private RemoveClass(){
+		
+	}
 	
 	public removeClass(){
 		
 		this.setSize(400,400);
-		
+
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		
 		this.setVisible(true);
@@ -40,8 +43,8 @@ public class removeClass extends JFrame{
 		int yPos = (dim.height / 2) - (this.getHeight() / 2);
 		
 		this.setLocation(xPos, yPos);
-		
-		
+	
+
 		this.setResizable(false); 
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
