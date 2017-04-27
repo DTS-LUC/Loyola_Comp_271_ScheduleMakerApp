@@ -19,7 +19,7 @@ public class ScheduleController
 	private RemoveClass viewRemove;
 	private AddCourse viewAdd;
 
-	private List<String> courseList;
+	// private String[] courseList;
 	
 	public ScheduleController()
 	{
@@ -43,19 +43,19 @@ public class ScheduleController
 		
 	}
 
-	// Action listener for viewAdd submit button
-	class addListener implements ActionListener
-	{
+	// // Action listener for viewAdd submit button
+	// class addListener implements ActionListener
+	// {
 
-		public void actionPerformed(ActionEvent e)
-		{
-			// Needs to collect ScheduleEvent and pass it to the setEventPanel in theSchedule
-			theSchedule.addPanel(viewAdd.getCourse());
-			viewAdd.setVisible(false);
-			viewAdd.dispose();
-		}
+	// 	public void actionPerformed(ActionEvent e)
+	// 	{
+	// 		// Needs to collect ScheduleEvent and pass it to the setEventPanel in theSchedule
+	// 		theSchedule.addPanel(viewAdd.getCourse());
+	// 		viewAdd.setVisible(false);
+	// 		viewAdd.dispose();
+	// 	}
 		
-	}
+	// }
 	
 	// Action listener for remove button on theSchedule
 	class removeClassListener implements ActionListener
@@ -64,7 +64,7 @@ public class ScheduleController
 		public void actionPerformed(ActionEvent e)
 		{
 			// Needs to pass course list to removeView
-			viewRemove = new RemoveClass(courseList);
+			viewRemove = new RemoveClass(); //send courseList
 			//Add button new removeListener() listener here
 
 			viewRemove.toFront();
@@ -73,22 +73,22 @@ public class ScheduleController
 	}
 
 	// Action listener for viewRemove submit button
-	class removeListener implements ActionListener
-	{
+	// class removeListener implements ActionListener
+	// {
 
-		public void actionPerformed(ActionEvent e)
-		{
-			// Need to build removeCourse method in RemoveClass to retrieve selected course
-			// Should return string course name
-			theSchedule.removePanel(viewRemove.removeCourse());
-			// Need to build remove method in theSchedule
+	// 	public void actionPerformed(ActionEvent e)
+	// 	{
+	// 		// Need to build removeCourse method in RemoveClass to retrieve selected course
+	// 		// Should return string course name
+	// 		theSchedule.removePanel(viewRemove.removeCourse());
+	// 		// Need to build remove method in theSchedule
 
-			viewRemove.setVisible(false);
-			viewRemove.dispose();
+	// 		viewRemove.setVisible(false);
+	// 		viewRemove.dispose();
 			
-		}
+	// 	}
 		
-	}
+	// }
 
 	public static void main(String[] args) {
 			new ScheduleController();

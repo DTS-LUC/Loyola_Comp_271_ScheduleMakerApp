@@ -181,51 +181,51 @@ public class LoyolaSchedule extends JFrame
 		friday[8] = new EventPanel(160, 100);
 	}
 
-	public void setPanel(ScheduleEvent e)
-	{
-		int time = e.getTime;
+	// public void setPanel(ScheduleEvent e)
+	// {
+	// 	int time = e.getTime;
 
-		switch (e.getDay()){
-			case 0:	//Monday
-				monday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-				monday[time].setCourseName(e.getCourseName());
-				monday[time].setProfessor(e.getProfessor());
-				monday[time].setBackground(e.getBackground());
-				return;
+	// 	switch (e.getDay()){
+	// 		case 0:	//Monday
+	// 			monday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			monday[time].setCourseName(e.getCourseName());
+	// 			monday[time].setProfessor(e.getProfessor());
+	// 			monday[time].setBackground(e.getBackground());
+	// 			return;
 
-			// Possible issues with location of Tuesday and Thursday slots
-			case 1: // Tuesday
-				tuesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-				tuesday[time].setCourseName(e.getCourseName());
-				tuesday[time].setProfessor(e.getProfessor());
-				tuesday[time].setBackground(e.getBackground());
-				return;
+	// 		// Possible issues with location of Tuesday and Thursday slots
+	// 		case 1: // Tuesday
+	// 			tuesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			tuesday[time].setCourseName(e.getCourseName());
+	// 			tuesday[time].setProfessor(e.getProfessor());
+	// 			tuesday[time].setBackground(e.getBackground());
+	// 			return;
 
-			case 2: // Wednesday
-				wednesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-				wednesday[time].setCourseName(e.getCourseName());
-				wednesday[time].setProfessor(e.getProfessor());
-				wednesday[time].setBackground(e.getBackground());
-				return;
+	// 		case 2: // Wednesday
+	// 			wednesday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			wednesday[time].setCourseName(e.getCourseName());
+	// 			wednesday[time].setProfessor(e.getProfessor());
+	// 			wednesday[time].setBackground(e.getBackground());
+	// 			return;
 
-			case 3: // Thursday
-				thursday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-				thursday[time].setCourseName(e.getCourseName());
-				thursday[time].setProfessor(e.getProfessor());
-				thursday[time].setBackground(e.getBackground());
-				return;
+	// 		case 3: // Thursday
+	// 			thursday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			thursday[time].setCourseName(e.getCourseName());
+	// 			thursday[time].setProfessor(e.getProfessor());
+	// 			thursday[time].setBackground(e.getBackground());
+	// 			return;
 
-			case 4: // Friday
-				friday[time].setCourse(e.getDepartment(), e.getCourseNumber());
-				friday[time].setCourseName(e.getCourseName());
-				friday[time].setProfessor(e.getProfessor());
-				friday[time].setBackground(e.getBackground());
-				return;
+	// 		case 4: // Friday
+	// 			friday[time].setCourse(e.getDepartment(), e.getCourseNumber());
+	// 			friday[time].setCourseName(e.getCourseName());
+	// 			friday[time].setProfessor(e.getProfessor());
+	// 			friday[time].setBackground(e.getBackground());
+	// 			return;
 
-			default:
-				return; // Set an error message
-			}
-	}
+	// 		default:
+	// 			return; // Set an error message
+	// 		}
+	// }
 
 	// Add ActionListener to AddButton
 	public void addAddButtonListener(ActionListener listenForAddButton)
@@ -239,27 +239,27 @@ public class LoyolaSchedule extends JFrame
 		removeButton.addActionListener(listenForRemoveButton);
 	}
 
-	// Not the most effective means
-	public void clearPanel(String toRemove)
-	{
-		for(int i = 0; i <= 8; i++)
-		{
-			if(toRemove.equals(monday[i].getCourse))
-			{
-				monday[i].clear();
-			}
+	// // Not the most effective means
+	// public void clearPanel(String toRemove)
+	// {
+	// 	for(int i = 0; i <= 8; i++)
+	// 	{
+	// 		if(toRemove.equals(monday[i].getCourse))
+	// 		{
+	// 			monday[i].clear();
+	// 		}
 
-			if(toRemove.equals(wednesday[i].getCourse))
-			{
-				wednesday[i].clear();
-			}
+	// 		if(toRemove.equals(wednesday[i].getCourse))
+	// 		{
+	// 			wednesday[i].clear();
+	// 		}
 
-			if(toRemove.equals(friday[i].getCourse))
-			{
-				friday[i].clear();
-			}
-		}
-	}
+	// 		if(toRemove.equals(friday[i].getCourse))
+	// 		{
+	// 			friday[i].clear();
+	// 		}
+	// 	}
+	// }
 }
 
 
