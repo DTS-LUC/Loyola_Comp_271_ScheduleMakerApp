@@ -1,8 +1,6 @@
-/* Remove Class
-	Similar to Add class
-	
-		BASIC_STRUCTURE
-			- Combo box that displays current classes
+/* Remove Class	Similar to Add class		
+BASIC_STRUCTURE			
+	- Combo box that displays current classes
 			- Returns location of box selected
 			- The main class will then clear the time slot label
 			
@@ -14,17 +12,15 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.text.NumberFormat;
 
-
 public class removeClass extends JFrame{
 
-	JButton button1;
+	JButton removeButton;
 	JTextField textField1;
 	JTextArea textArea1;
 	JComboBox Classes;
 	String CurrentClass="";
 	
-	
-	
+		
 	public static void main(String[] args){
 		
 		new removeClass();
@@ -38,7 +34,7 @@ public class removeClass extends JFrame{
 		
 		this.setVisible(true);
 		
-		Dimension dim = tk.getScreenSize();
+		Dimension dim = tk.getScreenSize();/
 		
 		int xPos = (dim.width / 2) - (this.getWidth() / 2);
 		int yPos = (dim.height / 2) - (this.getHeight() / 2);
@@ -54,11 +50,7 @@ public class removeClass extends JFrame{
 		
 		JPanel thePanel = new JPanel();
 		
-		String[] classes = {"Comp 271","Comp 264","Math 263"};
-		
-		Classes = new JComboBox(classes);
-		
-		Classes.addItem("Comp 163");
+		Classes = new JComboBox();
 		
 		JLabel label1 = new JLabel("Remove Class"); //Labels
 		
@@ -66,7 +58,7 @@ public class removeClass extends JFrame{
 		
 		button1 = new JButton("Remove"); //Buttons
 		
-		thePanel.add(button1);
+		thePanel.add(removeButton);
 
 		thePanel.add(Classes);
 		
@@ -91,7 +83,7 @@ public class removeClass extends JFrame{
 	private class ListenForButton implements ActionListener{
 
 		public void actionPerformed(ActionEvent e) {
-			if (e.getSource() == button1){
+			if (e.getSource() == removeButton){
 				
 				int removedClass = Classes.getSelectedIndex();
 				Classes.removeItemAt(removedClass);
