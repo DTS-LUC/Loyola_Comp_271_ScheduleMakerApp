@@ -35,8 +35,6 @@ public class LoyolaSchedule extends JFrame
 	
 	public LoyolaSchedule()
 	{
-		courseList = new LinkedList<String>();
-
 		this.setSize(800, 800);
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		this.setVisible(true);
@@ -183,7 +181,7 @@ public class LoyolaSchedule extends JFrame
 	{
 
 
-		
+
 	}
 
 	public void actionPerformed(ActionEvent e)

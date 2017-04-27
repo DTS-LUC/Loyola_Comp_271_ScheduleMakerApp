@@ -21,9 +21,9 @@ public class ScheduleController
 
 	private List<String> courseList;
 	
-	public ScheduleController(LoyolaSchedule theSchedule)
+	public ScheduleController()
 	{
-		this.theSchedule = theSchedule;
+		theSchedule = new LoyolaSchedule();
 	}
 
 
