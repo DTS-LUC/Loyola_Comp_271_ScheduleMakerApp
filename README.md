@@ -5,6 +5,8 @@ I started to post some basic structure and notes in the different files as comme
 
 We will have to focus a lot on learning & using Swing as well as EventListener.
 
+*We were not able to make more than the GUI before the deadline
+
 # Gitting Started
 
 	Github Tutorial: 
